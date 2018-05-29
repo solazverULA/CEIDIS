@@ -24,7 +24,11 @@ class CourseController extends Controller
 				return view('courses', compact('courses'));
     }
 
-		public function mostrar_cursos()
+		public function create_perfil()
+     {
+       return view('Perfil.indexPerfil');
+     }
+		/*public function mostrar_cursos()
 		{
 			$host = "localhost";
 			$user = "root";
@@ -41,19 +45,13 @@ class CourseController extends Controller
 				echo "$fila[description]" <br>;
 
 			}
-		}
+		}*/
     /**
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
      */
 
-		
-    public function create()
-    {
-        //
-				return view('course.formCurso');
-    }
 
     /**
      * Store a newly created resource in storage.

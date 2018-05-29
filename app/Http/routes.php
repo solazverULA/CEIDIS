@@ -16,3 +16,4 @@ Route::get('/', function () {
 });
 
 Route::get('admin/register-course','CoursesRegisterController@create_course');
+Route::get('admin/perfil-estudiante','CourseController@create_perfil');
