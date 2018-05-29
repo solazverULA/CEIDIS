@@ -25,8 +25,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	</script>
 	<!-- //Meta tags -->
 	<!-- Stylesheet -->
-	<link rel="stylesheet" href="css/jquery-ui_form.css" />
-	<link href="css/style_form.css" rel='stylesheet' type='text/css' />
+	<link rel="stylesheet" href="{{asset('css/jquery-ui_form.css')}}" />
+	<link href="{{asset('css/style_form.css')}}" rel='stylesheet' type='text/css' />
 	<!-- //Stylesheet -->
 	<!--fonts-->
 	<link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600" rel="stylesheet">
@@ -40,13 +40,31 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<div class="register-form-w3layouts">
 		<!-- Form starts here -->
 		<form action="#" method="post">
+
+			{{ csrf_field() }}
+
 			<h3 class="sub-heading-agileits">Datos del curso</h3>
 		<div class="main-flex-w3ls-sectns">
 				<div class="field-agileinfo-spc form-w3-agile-text1">
-					<input type="text" name="Name" placeholder="Nombre del curso" required="">
+					<input type="text" name="name" placeholder="Nombre del curso" required="">
 				</div>
 			</div>
 <!--CEDULA Y TELEFONO -->
+
+
+		<div class="main-flex-w3ls-sectns">
+
+				<textarea name="description" placeholder="Descripcion del curso"></textarea>
+
+		</div>
+
+		<div class="main-flex-w3ls-sectns">
+
+
+				<textarea name="summary" placeholder="Resumen del curso"></textarea>
+
+
+		</div>
 
 		<div class="main-flex-w3ls-sectns">
 
@@ -60,47 +78,15 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				</div>
 			-->
 				<div class="field-agileinfo-spc form-w3-agile-text1">
-					<input type="text" name="cedula" placeholder="Cédula" pattern="^((V|E)0{1,3}[0-9]{6,8})$" title="Debe ser de la forma V0XXXXXXXX / E00XXXXXX" required="">
+					<input type="text" name="hours" placeholder="Horas" pattern="^([0-9]{1,4})$" title="Horas" required="">
 				</div>
 				<div class="field-agileinfo-spc form-w3-agile-text2">
-					<input type="text" name="telefono" placeholder="Teléfono" pattern="^(\+{0,1}[0-9]+\(-[0-9]+))$" title="Télefono" required="">
-				</div>
-		</div>
-
-		<div class="main-flex-w3ls-sectns">
-				<input type="text" name="direccion" placeholder="Dirección">
-		</div>
-
-
-		<div class="main-flex-w3ls-sectns">
-			<div class="field-agileinfo-spc form-w3-agile-text1">
-				<select class="form-control">
-					<option>Genero</option>
-					<option value="Male">Masculino</option>
-					<option value="Female">Femenino</option>
-				</select>
-			</div>
-		</div>
-
-
-			<div class="main-flex-w3ls-sectns">
-				<div class="field-agileinfo-spc form-w3-agile-text1">
-					<input type="email" name="Email" placeholder="Correo" pattern="^([A-Za-z0-9._%-]+)@(ula|yahoo|gmail)\.com$" title="Debe ser @ula, @gmail o @yahoo" required="">
+					<input type="text" name="uc" placeholder="Unidades Credito (UC)" pattern="^([0-9]{1,4})$" title="UC" required="">
 				</div>
 				<div class="field-agileinfo-spc form-w3-agile-text2">
-					<input type="text" name="Email" placeholder="Confirma tu correo" required="">
+					<input type="text" name="id" placeholder="ID del curso" pattern="^([0-9]{1,4})$" title="id" required="">
 				</div>
-			</div>
-
-			<div class="main-flex-w3ls-sectns">
-				<div class="field-agileinfo-spc form-w3-agile-text1">
-					<input type="password" name="contrasena" placeholder="Contraseña" required="">
-				</div>
-				<div class="field-agileinfo-spc form-w3-agile-text2">
-					<input type="password" name="contrasenav" placeholder="Confirma tu Contraseña" required="">
-				</div>
-			</div>
-
+		</div>
 
 
 
@@ -108,13 +94,13 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				<h6>Tipo</h6>
 				<ul class="radio-buttons-w3-agileits">
 					<li>
-						<input type="radio" id="a-option" name="selector1" required="">
+						<input type="radio" id="a-option" name="type" required="">
 						<label for="a-option">CURSO</label>
 						<div class="check"></div>
 					</li>
 					<li>
-						<input type="radio" id="b-option" name="selector1" required="">
-						<label for="b-option">Taller</label>
+						<input type="radio" id="b-option" name="type" required="">
+						<label for="b-option">TALLER</label>
 						<div class="check">
 							<div class="inside"></div>
 						</div>
@@ -122,33 +108,6 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				</ul>
 				<div class="clear"></div>
 			</div>
-
-
-						<div class="radio-section">
-							<h6>Institución o empresa a la que pertenece</h6>
-							<ul class="radio-buttons-w3-agileits">
-								<li>
-									<input type="radio" id="a-option" name="selector2" required="">
-									<label for="a-option">ULA</label>
-									<div class="check"></div>
-								</li>
-								<li>
-									<input type="radio" id="b-option" name="selector2" required="">
-									<label for="b-option">Otra</label>
-									<div class="check">
-										<div class="inside"></div>
-									</div>
-								</li>
-								<li>
-									<input type="radio" id="c-option" name="selector2" required="">
-									<label for="c-option">Ninguna</label>
-									<div class="check">
-										<div class="inside"></div>
-									</div>
-								</li>
-							</ul>
-							<div class="clear"></div>
-						</div>
 
 
 
@@ -163,26 +122,14 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
 			<div class="main-flex-w3ls-sectns">
 				<div class="field-agileinfo-spc form-w3-agile-text1">
-					<input type="text" name="Height" placeholder="Height (Inches)" required="">
+					<input type="text" name="min_capacity" placeholder="Capacidad Minima" pattern="^([0-9]{1,2})$" required="">
 				</div>
 				<div class="field-agileinfo-spc form-w3-agile-text2">
-					<input type="text" name="Weight" placeholder="Weight (Pounds)" required="">
+					<input type="text" name="max_capacity" placeholder="Capacidad Maxima" pattern="^([0-9]{1,3})$" required="">
 				</div>
 			</div>
-			<div class="main-flex-w3ls-sectns">
-				<div class="field-agileinfo-spc form-w3-agile-text1">
-					<select class="form-control">
-						<option>Marital Status</option>
-						<option value="Single">Single</option>
-						<option value="Married">Married</option>
-						<option value="Divorced">Divorced</option>
-					</select>
-				</div>
-			</div>
-			<div class="field-agileinfo-spc form-w3-agile-text">
-				<textarea name="Message" placeholder="Address..."></textarea>
-			</div>
-			<div class="clear"></div>
+
+
 
 			<!--
 			<h2 class="sub-heading-agileits">Emergency Contact Details</h2>
@@ -221,11 +168,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				<div class="clear"></div>
 			</div>
 		-->
-			<div class="field-agileinfo-spc form-w3-agile-text">
-				<textarea name="Message" placeholder="If you are taking please list them here.."></textarea>
-			</div>
-			<input type="submit" value="Submit">
-			<input type="reset" value="Clear Form">
+
+			<input type="submit" value="Registrar">
+			<input type="reset" value="Limpiar Formulario">
 			<div class="clear"></div>
 		</form>
 		<!--// Form starts here -->

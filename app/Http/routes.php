@@ -15,4 +15,4 @@ Route::get('/', function () {
     return view('home');
 });
 
-Route::get('inscribir_curso','CursosController@crearcurso');
+Route::get('admin/register-course','CoursesRegisterController@create_course');

@@ -7,20 +7,13 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
-class CursosController extends Controller
+class CoursesRegisterController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-
-    public function crearcurso()
-    {
-      return view('Cursos.formulario');
-    }
-
-
     public function index()
     {
         //
@@ -31,6 +24,11 @@ class CursosController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+		public function create_course()
+     {
+       return view('Courses.form_register_course');
+     }
     public function create()
     {
         //
