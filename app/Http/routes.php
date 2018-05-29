@@ -15,4 +15,22 @@ Route::get('/', function () {
     return view('home');
 });
 
-Route::get('inscribir_curso','CursosController@crearcurso');
+Route::get('registration', 'RegistrationController@ingresar_registro');
+
+Route:: post('registration/successful', 'RegistrationController@registrar_student');
+
+
+/*
+Route::get('registration', function () {
+    return "vista de prueba creada";
+});
+*/
+//Route:: post('registration/successful', 'RegistrationController@registrar_student');
+
+/*
+Route::get('registration/prueba', function () {
+    return "vista de prueba creada";
+});
+
+
+*/
