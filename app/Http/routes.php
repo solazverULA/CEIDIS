@@ -14,3 +14,5 @@
 Route::get('/', function () {
     return view('home');
 });
+
+Route::get('inscribir_curso','CursosController@crearcurso');
