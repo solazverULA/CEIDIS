@@ -3,10 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Course;
-use App\Student_makes_curso;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use App\User;
 
 class CourseController extends Controller
 {
@@ -17,17 +16,16 @@ class CourseController extends Controller
      */
     public function index()
     {
-        //
-				//$course = Course::all();
-    		//return view('course.todos', ['course' => $course->toArray()]);
-
-				return view('courses', compact('courses'));
+        $estudiante = User::all();
+        return view('User', compact('estudiante'));
+       
     }
 
 		public function create_perfil()
-     {
+    {
        return view('Perfil.indexPerfil');
-     }
+    }
+
 		/*public function mostrar_cursos()
 		{
 			$host = "localhost";
@@ -59,7 +57,7 @@ class CourseController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    /*public function store(Request $request)
     {
         //
 				$this->validate($request, [
@@ -74,7 +72,7 @@ class CourseController extends Controller
     ]);
 
  
-    }
+    }*/
 
     /**
      * Display the specified resource.
@@ -82,13 +80,13 @@ class CourseController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+   public function show_estudiante($id)
     {
-        //
-				$course = Course::find($id);
-    		if (!is_null($course))
-        	return view('course.mostrar', ['course' => $course->toArray()]);
-   			else
+    
+		$name = User::find($id);
+    	if (!is_null($name))
+        	return view('name.mostrar', ['name' => $name->toArray()]);
+   		else
         	return response('No encontrado', 404);
     }
 

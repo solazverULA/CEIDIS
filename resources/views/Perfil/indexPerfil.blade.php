@@ -8,16 +8,30 @@
 <meta charset="utf-8">
 <meta name="keywords" content="Perfil del estudiante" />
 
+<script type="application/x-javascript">
+		addEventListener("load", function () {
+			setTimeout(hideURLbar, 0);
+		}, false);
+
+		function hideURLbar() {
+			window.scrollTo(0, 1);
+		}href="{{ asset('css/bootstrap.min.css') }}"
+	</script>
 <!-- css -->
 <!-- font-awesome icons -->
-<link rel="stylesheet" href="css/font-awesome.min.css" />
+<link href="{{asset('css/font-awesome.min.css')}}" rel="stylesheet" />
+
+<link href="{{asset('css/stylePerfil.css')}}" rel='stylesheet' type='text/css' media='all'/>
+
+<link href="{{asset('css/bootstrap.min.css')}}" rel="stylesheet" type='text/css' media='all' />
+
 <!-- //font-awesome icons -->
 
 <link href="//fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 <link href="//fonts.googleapis.com/css?family=Yanone+Kaffeesatz:200,300,400,700" rel="stylesheet">
 <link href="//fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css" type="text/css" media="all" />
-<link rel="stylesheet" href="css/bootstrap.min.css" type="text/css" media="all" />
+
+
 
 <!-- Default-JavaScript-File -->
 	<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
@@ -26,11 +40,6 @@
 
 </head>
 <body>
-<?php 
-
-$link = new PDO('mysql:host=localhost;dbname=CEIDIS_DB', 'root', ''); 
-
-?>
 
 <!-- banner -->
 	<div class="w3-banner-top">
@@ -50,15 +59,15 @@ $link = new PDO('mysql:host=localhost;dbname=CEIDIS_DB', 'root', '');
 		<div class="w3-banner-grids">
 			<div class="col-md-6 w3-banner-grid-left">
 				<div class="w3-banner-img">
-					<h3 class="test"> <?=$User['name']?> <?=$User['lastname']?> </h3>
-					<p class="test" ><?=$User['address']?> </p>
+					<h3 class="test"> Nombre y Apellido </h3>
+					
+					<p class="test" >direccion </p>
 				</div>
 			</div>
 			<div class="col-md-6 w3-banner-grid-right">
 			<div class="w3-banner-text">
 				<h3>PERFIL DEL ESTUDIANTE</h3>
 			
-
 				<p>Descripcion.</p>
 			</div>
 				<div class=" w3-right-addres-1">
@@ -68,25 +77,25 @@ $link = new PDO('mysql:host=localhost;dbname=CEIDIS_DB', 'root', '');
 
 									
 										<li class="agile-it-adress-left"><b>NOMBRE</b></li>
-										<li><span>:</span> <?=$User['name']?></li>
+										<li><span>:</span> {bla</li>
 									</ul>
 								</li>
 								<li>
 									<ul class="agileits-address-text">
 										<li class="agile-it-adress-left"><b>APELLIDO</b></li>
-										<li><span>:</span><?=$User['lastname']?></li>
+										<li><span>:</span>bla2</li>
 									</ul>
 								</li>
 								<li>
 									<ul class="agileits-address-text">
 										<li class="agile-it-adress-left"><b>DEPENDENCIA</b></li>
-										<li><span>:</span><?=$Student['department_origin']?></li>
+										<li><span>:</span>bla3</li>
 									</ul>
 								</li>
 								<li>
 									<ul class="agileits-address-text">
 										<li class="agile-it-adress-left"><b>E-MAIL</b></li>
-										<li><span>:</span> <a href="mailto:example@mail.com"> <?=$User['email']?></a></li>
+										<li><span>:</span> <a href="mailto:example@mail.com"> bla4</a></li>
 									</ul>
 								</li>
 								
@@ -226,8 +235,8 @@ $link = new PDO('mysql:host=localhost;dbname=CEIDIS_DB', 'root', '');
 						<div class="ins-details">
 							<div class="ins-name">
 						
-								<h3> <?=$course['name']?></h3>
-								<p><?=$libro['description']?></p>
+								<h3> curso1</h3>
+								<p>jewbfiehwo</p>
 								
 							</div>
 							
@@ -246,8 +255,8 @@ $link = new PDO('mysql:host=localhost;dbname=CEIDIS_DB', 'root', '');
 					
 						<div class="ins-details">
 							<div class="ins-name">
-								<h3> <?=$course['name']?></h3>
-								<p><?=$libro['description']?></p>
+								<h3> curso2</h3>
+								<p>kewhoifhewo</p>
 								
 							</div>
 							
@@ -266,8 +275,8 @@ $link = new PDO('mysql:host=localhost;dbname=CEIDIS_DB', 'root', '');
 					
 						<div class=" ins-details">
 							<div class="ins-name">
-								<h3> <?=$course['name']?></h3>
-								<p><?=$libro['description']?></p>
+								<h3> curso 3></h3>
+								<p>jbweiruh</p>
 								
 							</div>
 							
@@ -286,8 +295,8 @@ $link = new PDO('mysql:host=localhost;dbname=CEIDIS_DB', 'root', '');
 					
 						<div class="ins-details">
 							<div class="ins-name">
-								<h3> <?=$course['name']?></h3>
-								<p><?=$libro['description']?></p>
+								<h3> curso 4></h3>
+								<p>jkbewifhoew{</p>
 								
 							</div>
 							
@@ -306,8 +315,8 @@ $link = new PDO('mysql:host=localhost;dbname=CEIDIS_DB', 'root', '');
 					
 						<div class=" ins-details">
 							<div class="ins-name">
-								<h3> <?=$course['name']?></h3>
-								<p><?=$libro['description']?></p>
+								<h3> curso5</h3>
+								<p>kjshewr93umi</p>
 								
 							</div>
 							
@@ -326,8 +335,8 @@ $link = new PDO('mysql:host=localhost;dbname=CEIDIS_DB', 'root', '');
 					
 						<div class=" ins-details">
 							<div class="ins-name">
-								<h3> <?=$course['name']?></h3>
-								<p><?=$libro['description']?></p>
+								<h3> curso7</h3>
+								<p>kjhihio</p>
 								
 							</div>
 							
@@ -346,8 +355,8 @@ $link = new PDO('mysql:host=localhost;dbname=CEIDIS_DB', 'root', '');
 					
 						<div class=" ins-details">
 							<div class="ins-name">
-								<h3> <?=$course['name']?></h3>
-								<p><?=$libro['description']?></p>
+								<h3> curso8</h3>
+								<p>hwiupehrie</p>
 								
 							</div>
 							
@@ -366,8 +375,8 @@ $link = new PDO('mysql:host=localhost;dbname=CEIDIS_DB', 'root', '');
 					
 						<div class="ins-details">
 							<div class="ins-name">
-								<h3> <?=$course['name']?></h3>
-								<p><?=$libro['description']?></p>
+								<h3> curso19</h3>
+								<p>jhwqodhwoj</p>
 								
 							</div>
 							
@@ -385,8 +394,8 @@ $link = new PDO('mysql:host=localhost;dbname=CEIDIS_DB', 'root', '');
 					
 						<div class=" ins-details">
 							<div class="ins-name">
-								<h3> <?=$course['name']?></h3>
-								<p><?=$libro['description']?></p>
+								<h3> curso89</h3>
+								<p>jkhñwedowej</p>
 								
 							</div>
 							
@@ -404,8 +413,8 @@ $link = new PDO('mysql:host=localhost;dbname=CEIDIS_DB', 'root', '');
 					
 						<div class="ins-details">
 							<div class="ins-name">
-								<h3> <?=$course['name']?></h3>
-								<p><?=$libro['description']?></p>
+								<h3> curso989</h3>
+								<p>jbwdh</p>
 								
 							</div>
 							
