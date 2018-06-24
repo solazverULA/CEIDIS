@@ -39,7 +39,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
 	<div class="register-form-w3layouts">
 		<!-- Form starts here -->
-		<form action="#" method="post">
+		<form action="/admin/register-completed" method="post">
 
 			{{ csrf_field() }}
 
@@ -94,12 +94,12 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				<h6>Tipo</h6>
 				<ul class="radio-buttons-w3-agileits">
 					<li>
-						<input type="radio" id="a-option" name="type" required="">
+						<input type="radio" id="a-option" name="type" value="1" required="">
 						<label for="a-option">CURSO</label>
 						<div class="check"></div>
 					</li>
 					<li>
-						<input type="radio" id="b-option" name="type" required="">
+						<input type="radio" id="b-option" name="type" value="2" required="">
 						<label for="b-option">TALLER</label>
 						<div class="check">
 							<div class="inside"></div>

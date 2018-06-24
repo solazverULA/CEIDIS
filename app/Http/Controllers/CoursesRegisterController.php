@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use App\Course;
 
 class CoursesRegisterController extends Controller
 {
@@ -28,6 +29,35 @@ class CoursesRegisterController extends Controller
 		public function create_course()
      {
        return view('Courses.form_register_course');
+     }
+
+     public function store_form_register(Request $request)
+     {
+       //dd($request->all());
+
+       //PRIMER METODO:
+       /*
+           $cursos=new Course;
+           $cursos->name=$request->input('name');
+           $cursos->description=$request->input('description');
+           $cursos->summary=$request->input('summary');
+           $cursos->hours=$request->input('hours');
+           $cursos->uc=$request->input('uc');
+           $cursos->id=$request->input('id');
+           $cursos->type=$request->input('type');
+           $cursos->min_capacity=$request->input('min_capacity');
+           $cursos->max_capacity=$request->input('max_capacity');
+
+           $cursos->save();
+        */
+
+        //SEGUNDO METODO:
+        //Debe existir dentro del modelo el fillable (para que acepte asignacion
+        //masiva)
+
+            Course::create($request->all());
+            
+       return "Registro del Curso completado";
      }
     public function create()
     {

@@ -8,15 +8,7 @@
 <meta charset="utf-8">
 <meta name="keywords" content="Perfil del estudiante" />
 
-<script type="application/x-javascript">
-		addEventListener("load", function () {
-			setTimeout(hideURLbar, 0);
-		}, false);
 
-		function hideURLbar() {
-			window.scrollTo(0, 1);
-		}href="{{ asset('css/bootstrap.min.css') }}"
-	</script>
 <!-- css -->
 <!-- font-awesome icons -->
 <link href="{{asset('css/font-awesome.min.css')}}" rel="stylesheet" />
@@ -44,24 +36,15 @@
 <!-- banner -->
 	<div class="w3-banner-top">
 	<div class="agileinfo-dot">
-			<div class="w3layouts_menu">
-				<nav class="cd-stretchy-nav edit-content">
-					<a class="cd-nav-trigger" href="#0"> Menu <span aria-hidden="true"></span> </a>
-					<ul>
-						<li><a href="#home" class="scroll"><span>Perfil</span></a></li>
-						<li><a href="#about" class="scroll"><span>Cursos</span></a></li>
-						<li><a href="#experiences" class="scroll"><span>Notas</span></a></li>
-					</ul> 
-					<span aria-hidden="true" class="stretchy-nav-bg"></span>
-				</nav> 
-			</div>
-
+			
 		<div class="w3-banner-grids">
 			<div class="col-md-6 w3-banner-grid-left">
 				<div class="w3-banner-img">
-					<h3 class="test"> Nombre y Apellido </h3>
+				@forelse ($users as $user)
 					
-					<p class="test" >direccion </p>
+					<h3 class="test"> {{ $user->name}} {{$user->last_name }}</h3>
+					
+					<p class="test" >{{ $user->address }} </p>
 				</div>
 			</div>
 			<div class="col-md-6 w3-banner-grid-right">
@@ -77,25 +60,68 @@
 
 									
 										<li class="agile-it-adress-left"><b>NOMBRE</b></li>
-										<li><span>:</span> {bla</li>
+											<li><span>:</span> {{ $user->name }}</li>
 									</ul>
 								</li>
 								<li>
 									<ul class="agileits-address-text">
 										<li class="agile-it-adress-left"><b>APELLIDO</b></li>
-										<li><span>:</span>bla2</li>
+											<li><span>:</span> {{ $user->last_name }}</li>
 									</ul>
 								</li>
 								<li>
 									<ul class="agileits-address-text">
-										<li class="agile-it-adress-left"><b>DEPENDENCIA</b></li>
-										<li><span>:</span>bla3</li>
+										<li class="agile-it-adress-left">
+										<b> TIPO DE USUARIO </b></li>
+										<li><span>:</span>
+										@if ($user->type == 1 )
+											Profesor
+										@elseif ($user->type == 2 )
+											Estudiante PAD
+										@elseif ($user->type == 3 )
+											Estudiante CEIDIS
+										@elseif ($user->type == 4 )
+											Administrador
+										@elseif ($user->type == 5 )
+											Autoridad ULA
+										@elseif ($user->type == 6 )
+											Secretaria
+										@else
+											No posee tipo de usuario
+										@endif
+										</li>
 									</ul>
 								</li>
 								<li>
 									<ul class="agileits-address-text">
 										<li class="agile-it-adress-left"><b>E-MAIL</b></li>
-										<li><span>:</span> <a href="mailto:example@mail.com"> bla4</a></li>
+											<li><span>:</span>  {{ $user->email }}</li>
+									</ul>
+								</li>
+
+				@empty
+					<li><span>:</span> No posee registro </li>
+				@endforelse
+				@forelse ($students as $student)
+								<li>
+									<ul class="agileits-address-text">
+										<li class="agile-it-adress-left"><b>INSTITUCION</b></li>
+											<li><span>:</span> {{ $student->institution}}</li>
+									</ul>
+								</li>
+								<li>
+								<li>
+									<ul class="agileits-address-text">
+										<li class="agile-it-adress-left"><b>DEPENDENCIA</b></li>
+											<li><span>:</span> {{ $student->department_origin}}</li>
+									</ul>
+								</li>
+								<li>
+				@empty
+					<li><span>:</span> No posee registro </li>
+				@endforelse
+									
+
 									</ul>
 								</li>
 								
@@ -114,10 +140,8 @@
 
 	</div>
 <!-- banner -->
-<!-- /CURSOS -->
 
-<!-- main-content -->
-	<div class="main-content">
+<div class="main-content">
 		<!-- gallery -->
 	<div class="gallery" id="about">
 		<div class="w3-gallery-head">
@@ -130,7 +154,7 @@
 				<div class="col-md-4 col-ms-6 jm-item first filtr-item" data-category="1, 5" data-sort="Busy streets" style="opacity: 1; transform: scale(1) translate3d(0px, 0px, 0px); backface-visibility: hidden; perspective: 1000px; transform-style: preserve-3d; position: absolute; transition: all 0.5s ease-out 0ms;">
 					<div class="jm-item-wrapper">
 						<div class="jm-item-image">
-							<img src="images/g11.jpg" alt="property" />
+							<img src="{{('images/g11.jpg')}}" alt="property" />
 							<span class="jm-item-overlay"> </span>
 							<div class="jm-item-button"><a href="#"  data-toggle="modal" data-target="#myModal1">VER DETALLES</a></div>
 						</div>	
@@ -223,8 +247,6 @@
 	<!--//gallery-->
 	</div>
 <!-- //main-content -->
-
-
 	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" >
 				<div class="modal-dialog">
 							<!-- Modal content-->
@@ -234,9 +256,9 @@
 					
 						<div class="ins-details">
 							<div class="ins-name">
-						
-								<h3> curso1</h3>
-								<p>jewbfiehwo</p>
+								<h3>CURSO 1</h3>
+								<p>Breve descripcion del curso</p>
+								<button type="submit"> Inscribir </button>
 								
 							</div>
 							
@@ -255,8 +277,9 @@
 					
 						<div class="ins-details">
 							<div class="ins-name">
-								<h3> curso2</h3>
-								<p>kewhoifhewo</p>
+								<h3>CURSO 2</h3>
+								<p>Breve descripcion del curso</p>
+								<button type="submit"> Inscribir </button>
 								
 							</div>
 							
@@ -275,8 +298,9 @@
 					
 						<div class=" ins-details">
 							<div class="ins-name">
-								<h3> curso 3></h3>
-								<p>jbweiruh</p>
+								<h3>CURSO 3</h3>
+								<p>Breve descripcion del curso</p>
+								<button type="submit"> Inscribir </button>
 								
 							</div>
 							
@@ -295,8 +319,9 @@
 					
 						<div class="ins-details">
 							<div class="ins-name">
-								<h3> curso 4></h3>
-								<p>jkbewifhoew{</p>
+								<h3>CURSO 4</h3>
+								<p>Breve descripcion del curso</p>
+								<button type="submit"> Inscribir </button>
 								
 							</div>
 							
@@ -315,8 +340,9 @@
 					
 						<div class=" ins-details">
 							<div class="ins-name">
-								<h3> curso5</h3>
-								<p>kjshewr93umi</p>
+								<h3>CURSO 5</h3>
+								<p>SBreve descripcion del curso</p>
+								<button type="submit"> Inscribir </button>
 								
 							</div>
 							
@@ -335,9 +361,10 @@
 					
 						<div class=" ins-details">
 							<div class="ins-name">
-								<h3> curso7</h3>
-								<p>kjhihio</p>
-								
+								<h3>CURSO 6</h3>
+								<p>Breve descripcion del curso</p>
+								<button type="submit"> Inscribir </button>
+
 							</div>
 							
 						</div>
@@ -355,9 +382,10 @@
 					
 						<div class=" ins-details">
 							<div class="ins-name">
-								<h3> curso8</h3>
-								<p>hwiupehrie</p>
-								
+								<h3>CURSO 7</h3>
+								<p>Breve descripcion del curso</p>
+								<button type="submit"> Inscribir </button>
+
 							</div>
 							
 						</div>
@@ -375,9 +403,10 @@
 					
 						<div class="ins-details">
 							<div class="ins-name">
-								<h3> curso19</h3>
-								<p>jhwqodhwoj</p>
-								
+								<h3>CURSO 8</h3>
+								<p>Breve descripcion del curso</p>
+								<button type="submit"> Inscribir </button>
+
 							</div>
 							
 						</div>
@@ -394,9 +423,10 @@
 					
 						<div class=" ins-details">
 							<div class="ins-name">
-								<h3> curso89</h3>
-								<p>jkhñwedowej</p>
-								
+								<h3>CURSO 9</h3>
+								<p>Breve descripcion del curso</p>
+								<button type="submit"> Inscribir </button>
+
 							</div>
 							
 						</div>
@@ -413,73 +443,20 @@
 					
 						<div class="ins-details">
 							<div class="ins-name">
-								<h3> curso989</h3>
-								<p>jbwdh</p>
-								
+								<h3>CURSO 10</h3>
+								<p>Breve descripcion del curso</p>
+								<button type="submit"> Inscribir </button>
+
 							</div>
 							
 						</div>
 						<div class="clearfix"></div>			
 			     </div>
-	</div>	
-			
-<!-- //about  -->
-<!--/ NOTAS 
-	<div class="w3-edu-top" id="experiences">
-	<div class="container">
-		<div class="w3-edu-grids">
-			<div class="col-md-6 w3-edu-grid-left">
-				<div class="w3-edu-grid-header">
-				<h3>NOTAS</h3>
-				</div>
-				<div class="col-md-4 w3-edu-info1">
-					<h3>Nombre del curso 1</h3>		
-			</div>
-			<div class="col-md-6 w3-edu-info2">
-				<h3>Nota</h3>
-			</div>
-			<div class="clearfix"></div>
-                
-			<div class="col-md-4 w3-edu-info1">
-			<h3>Nombre del curso 2</h3>		
-			</div>    
-			<div class="col-md-6 w3-edu-info2">
-				<h3>Nota</h3>	
-			</div>
-			<div class="clearfix"></div>
-                
-			<div class="col-md-4 w3-edu-info1">
-			<h3>Nombre del curso 3</h3>		
-			</div>
-			<div class="col-md-6 w3-edu-info2">
-				<h3>Nota</h3>
-			</div>
-			<div class="clearfix"></div>
-             
-            <div class="col-md-4 w3-edu-info1">
-			<h3>Nombre del curso 4</h3>		
-			</div>
-			<div class="col-md-6 w3-edu-info2">
-				<h3>Nota</h3>
-			</div>
-			<div class="clearfix"></div>
-                
-			</div>
-            
-			<div class="col-md-6 w3-edu-grid-right">
-			<div class="w3-edu-grid-header">
-			</div>
-                
-            
-		</div>
-		<div class="clearfix"></div>	
-	</div>
-	</div>
-	</div>
- -->
+	</div>				 				
+
 
 				 					
- <script src="js/jquery.filterizr.js"></script>
+ <script src="{{('js/jquery.filterizr.js')}}"></script>
     
     <!-- Kick off Filterizr -->
     <script type="text/javascript">
@@ -491,9 +468,9 @@
 
 
 
-<script src="js/bars.js"></script>
+<script src="{{('js/bars.js')}}"></script>
 <!-- start-smoth-scrolling -->
-<script src="js/SmoothScroll.min.js"></script>
+<script src="{{('js/SmoothScroll.min.js')}}"></script>
 <!-- text-effect -->
 		<script type="text/javascript" src="js/jquery.transit.js"></script> 
 		<script type="text/javascript" src="js/jquery.textFx.js"></script> 
@@ -508,8 +485,8 @@
 		</script>
 <!-- //text-effect -->
 <!-- menu-js --> 	
-	<script src="js/modernizr.js"></script>	
-	<script src="js/menu.js"></script>
+	<script src="{{('js/modernizr.js')}}"></script>	
+	<script src="{{('js/menu.js')}}"></script>
 <!-- //menu-js --> 	
 
 
