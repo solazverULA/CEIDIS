@@ -19,17 +19,17 @@ class CourseController extends Controller
      */
     public function index()
     {
-        $users = User::all();
+        return view('Perfil.indexPerfil');
+    }
+
+	public function create_perfil()
+    {
+    	$users = User::all();
         $students = Student :: all();
 
         //dd($users);
         return view('Perfil.indexPerfil', compact('users','students'));
        
-    }
-
-	public function create_perfil()
-    {
-       return view('Perfil.indexPerfil');
     }
 
     
