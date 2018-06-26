@@ -40,8 +40,7 @@
 		<div class="w3-banner-grids">
 			<div class="col-md-6 w3-banner-grid-left">
 				<div class="w3-banner-img">
-				@forelse ($users as $user)
-					
+				
 					<h3 class="test"> {{ $user->name}} {{$user->last_name }}</h3>
 					
 					<p class="test" >{{ $user->address }} </p>
@@ -99,10 +98,6 @@
 									</ul>
 								</li>
 
-				@empty
-					<li><span>:</span> No posee registro </li>
-				@endforelse
-				@forelse ($students as $student)
 								<li>
 									<ul class="agileits-address-text">
 										<li class="agile-it-adress-left"><b>INSTITUCION</b></li>
@@ -117,11 +112,7 @@
 									</ul>
 								</li>
 								<li>
-				@empty
-					<li><span>:</span> No posee registro </li>
-				@endforelse
-									
-
+			
 									</ul>
 								</li>
 								
@@ -129,333 +120,23 @@
 
 				</div>
 			</div>
-			<div class="clearfix"></div>
-		</div>
-		</div>
-		<div class="thim-click-to-bottom">
-				<a href="#about" class="scroll">
-					<i class="fa  fa-chevron-down"></i>
-				</a>
-			</div>
-
-	</div>
-<!-- banner -->
-
-<div class="main-content">
-		<!-- gallery -->
-	<div class="gallery" id="about">
-		<div class="w3-gallery-head">
-			<h3>MIS CURSOS</h3>
-		</div>
-	<div class="container">
-		<div class="gallery_gds">
 			
-            <div class="filtr-container " style="padding: 0px; position: relative; height: 858px;">
-				<div class="col-md-4 col-ms-6 jm-item first filtr-item" data-category="1, 5" data-sort="Busy streets" style="opacity: 1; transform: scale(1) translate3d(0px, 0px, 0px); backface-visibility: hidden; perspective: 1000px; transform-style: preserve-3d; position: absolute; transition: all 0.5s ease-out 0ms;">
-					<div class="jm-item-wrapper">
-						<div class="jm-item-image">
-							<img src="{{('images/g11.jpg')}}" alt="property" />
-							<span class="jm-item-overlay"> </span>
-							<div class="jm-item-button"><a href="#"  data-toggle="modal" data-target="#myModal1">VER DETALLES</a></div>
-						</div>	
-						
-					</div>
-				</div>
-				<div class="col-md-4 col-ms-6 jm-item first filtr-item" data-category="2, 5" data-sort="Luminous night" style="opacity: 1; transform: scale(1) translate3d(380px, 0px, 0px); backface-visibility: hidden; perspective: 1000px; transform-style: preserve-3d; position: absolute; transition: all 0.5s ease-out 0ms;">
-					<div class="jm-item-wrapper">
-						<div class="jm-item-image">
-							<img src="images/g21.jpg" alt="property" />
-							<span class="jm-item-overlay"> </span>
-							<div class="jm-item-button"><a href="#"  data-toggle="modal" data-target="#myModal2">VER DETALLES</a></div>
-						</div>	
-						
-					</div>
-				</div>
-				<div class="col-md-4 col-ms-6 jm-item first filtr-item" data-category="1, 4" data-sort="City wonders" style="opacity: 1; transform: scale(1) translate3d(760px, 0px, 0px); backface-visibility: hidden; perspective: 1000px; transform-style: preserve-3d; position: absolute; transition: all 0.5s ease-out 0ms;">
-					<div class="jm-item-wrapper">
-						<div class="jm-item-image">
-							<img src="images/g31.jpg" alt="property" />
-							<span class="jm-item-overlay"> </span>
-							<div class="jm-item-button"><a href="#"  data-toggle="modal" data-target="#myModal3">VER DETALLES</a></div>
-						</div>	
-						
-					</div>
-				</div>
-				<div class="col-md-4 col-ms-6 jm-item first filtr-item" data-category="1, 3" data-sort="In production" style="opacity: 1; transform: scale(1) translate3d(0px, 286px, 0px); backface-visibility: hidden; perspective: 1000px; transform-style: preserve-3d; position: absolute; transition: all 0.5s ease-out 0ms;">
-					<div class="jm-item-wrapper">
-						<div class="jm-item-image">
-							<img src="images/g41.jpg" alt="property" />
-							<span class="jm-item-overlay"> </span>
-							<div class="jm-item-button"><a href="#"  data-toggle="modal" data-target="#myModal4">VER DETALLES</a></div>
-						</div>	
-					</div>
-				</div>
-				<div class="col-md-4 col-ms-6 jm-item first filtr-item" data-category="3, 4" data-sort="Industrial site" style="opacity: 1; transform: scale(1) translate3d(380px, 286px, 0px); backface-visibility: hidden; perspective: 1000px; transform-style: preserve-3d; position: absolute; transition: all 0.5s ease-out 0ms;">
-					<div class="jm-item-wrapper">
-						<div class="jm-item-image">
-							<img src="images/g51.jpg" alt="property" />
-							<span class="jm-item-overlay"> </span>
-							<div class="jm-item-button"><a href="#"  data-toggle="modal" data-target="#myModal5">VER DETALLES</a></div>
-						</div>	
-					</div>
-				</div>
-				<div class="col-md-4 col-ms-6 jm-item first filtr-item" data-category="3, 4" data-sort="Industrial site" style="opacity: 1; transform: scale(1) translate3d(380px, 286px, 0px); backface-visibility: hidden; perspective: 1000px; transform-style: preserve-3d; position: absolute; transition: all 0.5s ease-out 0ms;">
-					<div class="jm-item-wrapper">
-						<div class="jm-item-image">
-							<img src="images/g61.jpg" alt="property" />
-							<span class="jm-item-overlay"> </span>
-							<div class="jm-item-button"><a href="#"  data-toggle="modal" data-target="#myModal5">VER DETALLES</a></div>
-						</div>
-						
-					</div>
-				</div>
-				<div class="col-md-4 col-ms-6 jm-item first filtr-item" data-category="1, 3" data-sort="City lights" style="opacity: 1; transform: scale(1) translate3d(0px, 572px, 0px); backface-visibility: hidden; perspective: 1000px; transform-style: preserve-3d; position: absolute; transition: all 0.5s ease-out 0ms;">
-					<div class="jm-item-wrapper">
-						<div class="jm-item-image">
-							<img src="images/g71.jpg" alt="property" />
-							<span class="jm-item-overlay"> </span>
-							<div class="jm-item-button"><a href="#"  data-toggle="modal" data-target="#myModal7">VER DETALLES</a></div>
-						</div>	
-						
-					</div>
-				</div>
-				<div class="col-md-4 col-ms-6 jm-item first filtr-item" data-category="2, 4" data-sort="Dreamhouse" style="opacity: 1; transform: scale(1) translate3d(380px, 572px, 0px); backface-visibility: hidden; perspective: 1000px; transform-style: preserve-3d; position: absolute; transition: all 0.5s ease-out 0ms;">
-					<div class="jm-item-wrapper">
-						<div class="jm-item-image">
-							<img src="images/g81.jpg" alt="property" />
-							<span class="jm-item-overlay"> </span>
-							<div class="jm-item-button"><a href="#"  data-toggle="modal" data-target="#myModal8">VER DETALLES</a></div>
-						</div>	
-						
-					</div>
-				</div>
-				<div class="col-md-4 col-ms-6 jm-item first filtr-item" data-category="1, 3, 4" data-sort="Dreamhouse" style="opacity: 1; transform: scale(1) translate3d(760px, 572px, 0px); backface-visibility: hidden; perspective: 1000px; transform-style: preserve-3d; position: absolute; transition: all 0.5s ease-out 0ms;">
-					<div class="jm-item-wrapper">
-						<div class="jm-item-image">
-							<img src="images/g91.jpg" alt="property" />
-							<span class="jm-item-overlay"> </span>
-							<div class="jm-item-button"><a href="#"  data-toggle="modal" data-target="#myModal9">VER DETALLES</a></div>
-						</div>	
-						
-					</div>
-				</div>
-               <div class="clearfix"> </div>
-            </div>
 		</div>
-	</div>	
+		</div>
+		<div class="w3-banner-text"><a href="{{route('inscribir.curso')}}"><h3><center>Inscribir Cursos</center></h3></a></div>
 	</div>
-	<!--//gallery-->
-	</div>
-<!-- //main-content -->
-	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" >
-				<div class="modal-dialog">
-							<!-- Modal content-->
-                            <button type="button" class="close" data-dismiss="modal">&times;</button>
-							<div class="w3ls-property-images w3-pop1-img">
-							</div>
-					
-						<div class="ins-details">
-							<div class="ins-name">
-								<h3>CURSO 1</h3>
-								<p>Breve descripcion del curso</p>
-								<button type="submit"> Inscribir </button>
-								
-							</div>
-							
-						</div>
-						<div class="clearfix"></div>			
-			     </div>
-	</div>
-					 
-<div class="modal fade" id="myModal1" tabindex="-1" role="dialog" >
-				<div class="modal-dialog">
-							<!-- Modal content-->
-                            <button type="button" class="close" data-dismiss="modal">&times;</button>
-							<div class="w3ls-property-images">
-								<img src="images/gal11.jpg" alt="image">
-							</div>
-					
-						<div class="ins-details">
-							<div class="ins-name">
-								<h3>CURSO 2</h3>
-								<p>Breve descripcion del curso</p>
-								<button type="submit"> Inscribir </button>
-								
-							</div>
-							
-						</div>
-						<div class="clearfix"></div>			
-			     </div>
-	</div>
-					 
-<div class="modal fade" id="myModal2" tabindex="-1" role="dialog" >
-				<div class="modal-dialog">
-							<!-- Modal content-->
-                            <button type="button" class="close" data-dismiss="modal">&times;</button>
-							<div class=" w3ls-property-images w3-pop1-img2">
-							<img src="images/gal22.jpg" alt="image">
-							</div>
-					
-						<div class=" ins-details">
-							<div class="ins-name">
-								<h3>CURSO 3</h3>
-								<p>Breve descripcion del curso</p>
-								<button type="submit"> Inscribir </button>
-								
-							</div>
-							
-						</div>
-						<div class="clearfix"></div>			
-			     </div>
-	</div>
-					 
-<div class="modal fade" id="myModal3" tabindex="-1" role="dialog" >
-				<div class="modal-dialog">
-							<!-- Modal content-->
-                            <button type="button" class="close" data-dismiss="modal">&times;</button>
-							<div class="w3ls-property-images w3-pop1-img3">
-							<img src="images/gal33.jpg" alt="image">
-							</div>
-					
-						<div class="ins-details">
-							<div class="ins-name">
-								<h3>CURSO 4</h3>
-								<p>Breve descripcion del curso</p>
-								<button type="submit"> Inscribir </button>
-								
-							</div>
-							
-						</div>
-						<div class="clearfix"></div>			
-			     </div>
-	</div>
-					 
-<div class="modal fade" id="myModal4" tabindex="-1" role="dialog" >
-				<div class="modal-dialog">
-							<!-- Modal content-->
-                            <button type="button" class="close" data-dismiss="modal">&times;</button>
-							<div class=" w3ls-property-images w3-pop1-img4">
-							<img src="images/gal44.jpg" alt="image">
-							</div>
-					
-						<div class=" ins-details">
-							<div class="ins-name">
-								<h3>CURSO 5</h3>
-								<p>SBreve descripcion del curso</p>
-								<button type="submit"> Inscribir </button>
-								
-							</div>
-							
-						</div>
-						<div class="clearfix"></div>			
-			     </div>
-	</div>
-					 
-<div class="modal fade" id="myModal5" tabindex="-1" role="dialog" >
-				<div class="modal-dialog">
-							<!-- Modal content-->
-                            <button type="button" class="close" data-dismiss="modal">&times;</button>
-							<div class=" w3ls-property-images w3-pop1-img5">
-							<img src="images/gal66.jpg" alt="image">
-							</div>
-					
-						<div class=" ins-details">
-							<div class="ins-name">
-								<h3>CURSO 6</h3>
-								<p>Breve descripcion del curso</p>
-								<button type="submit"> Inscribir </button>
 
-							</div>
-							
-						</div>
-						<div class="clearfix"></div>			
-			     </div>
-	</div>
-					 
-<div class="modal fade" id="myModal6" tabindex="-1" role="dialog" >
-				<div class="modal-dialog">
-							<!-- Modal content-->
-                            <button type="button" class="close" data-dismiss="modal">&times;</button>
-							<div class=" w3ls-property-images w3-pop1-img6">
-								<img src="images/gal61.jpg" alt="image">
-							</div>
-					
-						<div class=" ins-details">
-							<div class="ins-name">
-								<h3>CURSO 7</h3>
-								<p>Breve descripcion del curso</p>
-								<button type="submit"> Inscribir </button>
+				 
 
-							</div>
-							
-						</div>
-						<div class="clearfix"></div>			
-			     </div>
-	</div>
-					 
-<div class="modal fade" id="myModal7" tabindex="-1" role="dialog" >
-				<div class="modal-dialog">
-							<!-- Modal content-->
-                            <button type="button" class="close" data-dismiss="modal">&times;</button>
-							<div class=" w3ls-property-images w3-pop1-img7">
-								<img src="images/gal77.jpg" alt="image">
-							</div>
-					
-						<div class="ins-details">
-							<div class="ins-name">
-								<h3>CURSO 8</h3>
-								<p>Breve descripcion del curso</p>
-								<button type="submit"> Inscribir </button>
-
-							</div>
-							
-						</div>
-						<div class="clearfix"></div>			
-			     </div>
-	</div>
-<div class="modal fade" id="myModal8" tabindex="-1" role="dialog" >
-				<div class="modal-dialog">
-							<!-- Modal content-->
-                            <button type="button" class="close" data-dismiss="modal">&times;</button>
-							<div class=" w3ls-property-images w3-pop1-img8">
-								<img src="images/gal88.jpg" alt="image">
-							</div>
-					
-						<div class=" ins-details">
-							<div class="ins-name">
-								<h3>CURSO 9</h3>
-								<p>Breve descripcion del curso</p>
-								<button type="submit"> Inscribir </button>
-
-							</div>
-							
-						</div>
-						<div class="clearfix"></div>			
-			     </div>
-	</div>
-<div class="modal fade" id="myModal9" tabindex="-1" role="dialog" >
-				<div class="modal-dialog">
-							<!-- Modal content-->
-                            <button type="button" class="close" data-dismiss="modal">&times;</button>
-							<div class=" w3ls-property-images w3-pop1-img9">
-							<img src="images/gal99.jpg" alt="image">
-							</div>
-					
-						<div class="ins-details">
-							<div class="ins-name">
-								<h3>CURSO 10</h3>
-								<p>Breve descripcion del curso</p>
-								<button type="submit"> Inscribir </button>
-
-							</div>
-							
-						</div>
-						<div class="clearfix"></div>			
-			     </div>
-	</div>				 				
-
-
-				 					
+	<script type="text/javascript" src="js/jquery-2.2.3.min.js"></script>
+	<!-- Calendar Js -->
+	<script src="js/jquery-ui.js"></script>
+	<script>
+		$(function () {
+			$("#datepicker,#datepicker1,#datepicker2,#datepicker3").datepicker();
+		});
+	</script>
+<!-- //education -->					
  <script src="{{('js/jquery.filterizr.js')}}"></script>
     
     <!-- Kick off Filterizr -->

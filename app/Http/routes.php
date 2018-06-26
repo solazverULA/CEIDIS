@@ -19,6 +19,13 @@ Route::get('admin/register-course','CoursesRegisterController@create_course');
 
 Route::post('admin/register-completed','CoursesRegisterController@store_form_register');
 
+//Rutas del perfil
+Route::get('admin/perfil-estudiante/{id}','CourseController@show_perfil_user');
 
-Route::get('admin/perfil-estudiante','CourseController@create_perfil');
+Route::get('admin/cursos','CourseController@show_courses')
+	->name('inscribir.curso');
+
+Route::get('admin/cursos-inscritos','CourseController@cursos_inscritos');
+ 
+
 
